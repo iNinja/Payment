@@ -1,4 +1,7 @@
 osx_image: xcode8.3
-language: objective-c
-xcode_workspace: Payment.xcworkspace
-xcode_scheme: PaymentTests
+language: swift
+
+script:
+  - xcodebuild -scheme Payment -workspace Payment.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone SE,OS=10.2' build test
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
