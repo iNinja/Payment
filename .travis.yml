@@ -2,7 +2,7 @@ osx_image: xcode8.3
 language: swift
 
 script:
-  - xcodebuild clean build -scheme Payment -workspace Payment.xcworkspace -sdk iphonesimulator -destination 'name=iPhone SE,OS=10.2' | xcpretty -c -f `bin/xcpretty-travis-formatter`
-  - xcodebuild test -scheme Payment -workspace Payment.xcworkspace -sdk iphonesimulator -destination 'name=iPhone SE,OS=10.2' CODE_SIGNING_REQUIRED=NO | xcpretty -c -f `bin/xcpretty-travis-formatter`
+  - xcodebuild clean build -scheme Payment -workspace Payment.xcworkspace -sdk iphonesimulator -destination 'name=iPhone SE,OS=10.2' | xcpretty -c
+  - xcodebuild test -scheme Payment -workspace Payment.xcworkspace -sdk iphonesimulator -destination 'name=iPhone SE,OS=10.2' CODE_SIGNING_REQUIRED=NO | xcpretty -c
 after_success:
   - bash <(curl -s https://codecov.io/bash)
