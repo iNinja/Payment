@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainController" customModule="Payment" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="vJk-Yy-2CA" id="dBo-2Y-T1t"/>
+                <outlet property="messageLabel" destination="Svk-LU-quq" id="QJB-e0-FTV"/>
+                <outlet property="textfield" destination="fEW-7U-WDG" id="Lwj-5v-1uB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svk-LU-quq">
+                    <rect key="frame" x="96" y="58" width="183.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEW-7U-WDG">
+                    <rect key="frame" x="96" y="107" width="183.5" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJk-Yy-2CA">
+                    <rect key="frame" x="164" y="157" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="payTapped" destination="-1" eventType="touchUpInside" id="XUf-mB-4Ti"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fEW-7U-WDG" firstAttribute="top" secondItem="Svk-LU-quq" secondAttribute="bottom" constant="20" id="7GP-mY-Pge"/>
+                <constraint firstItem="vJk-Yy-2CA" firstAttribute="top" secondItem="fEW-7U-WDG" secondAttribute="bottom" constant="20" id="BIL-Ye-AUZ"/>
+                <constraint firstItem="fEW-7U-WDG" firstAttribute="centerX" secondItem="Svk-LU-quq" secondAttribute="centerX" id="YCj-YF-AQK"/>
+                <constraint firstItem="vJk-Yy-2CA" firstAttribute="centerX" secondItem="fEW-7U-WDG" secondAttribute="centerX" id="dWu-er-QNC"/>
+                <constraint firstItem="fEW-7U-WDG" firstAttribute="width" secondItem="Svk-LU-quq" secondAttribute="width" id="djq-iM-jGW"/>
+                <constraint firstItem="Svk-LU-quq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e20-Et-Gvz"/>
+                <constraint firstItem="Svk-LU-quq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="50" id="xz8-7a-1gT"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,13 @@
+[
+   {
+      "payer_costs":[
+         {
+            "invalid":1,
+            "installment_rate":0,
+            "recommended_message":"1 cuota de $ 15,00 ($ 15,00)",
+            "installment_amount":15,
+            "total_amount":15
+         }
+      ]
+   }
+]

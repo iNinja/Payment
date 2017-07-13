@@ -1,0 +1,41 @@
+[
+   {
+      "payer_costs":[
+         {
+            "installments":1,
+            "installment_rate":0,
+            "recommended_message":"1 cuota de $ 15,00 ($ 15,00)",
+            "installment_amount":15,
+            "total_amount":15
+         },
+         {
+            "installments":3,
+            "installment_rate":10.97,
+            "recommended_message":"3 cuotas de $ 5,55 ($ 16,64)",
+            "installment_amount":5.55,
+            "total_amount":16.64
+         },
+         {
+            "installments":6,
+            "installment_rate":19.5,
+            "recommended_message":"6 cuotas de $ 2,99 ($ 17,92)",
+            "installment_amount":2.99,
+            "total_amount":17.92
+         },
+         {
+            "installments":9,
+            "installment_rate":28.78,
+            "recommended_message":"9 cuotas de $ 2,15 ($ 19,31)",
+            "installment_amount":2.15,
+            "total_amount":19.31
+         },
+         {
+            "installments":12,
+            "installment_rate":38.38,
+            "recommended_message":"12 cuotas de $ 1,73 ($ 20,75)",
+            "installment_amount":1.73,
+            "total_amount":20.75
+         }
+      ]
+   }
+]
