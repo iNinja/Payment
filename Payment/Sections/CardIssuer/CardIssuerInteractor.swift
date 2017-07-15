@@ -24,25 +24,25 @@ final class CardIssuerInteractor {
     }
     
     func trackImpression() {
-        eventTracker.trackSectionChange(name: "Card Issuer")
+        eventTracker.trackSectionChange(name: Constants.TrackingEvents.Sections.cardIssuer)
     }
     
     func getCardIssuers(completion: @escaping ([CardIssuer]?, RepositoryError?) -> Void) {
         repository.getAll { (cardIssuers, error) in
-            let eventSuffix = error == nil ? "Succeeded" : "Failed"
-            self.eventTracker.trackEvent("Card Issuer Retrieval " + eventSuffix, parameters: nil)
+            let event = error == nil ?  Constants.TrackingEvents.CardIssuers.retrieved : Constants.TrackingEvents.CardIssuers.notRetrieved
+            self.eventTracker.trackEvent(event, parameters: nil)
             completion(cardIssuers, error)
         }
     }
     
     func continuePaymentFlowWith(issuer: CardIssuer) {
-        eventTracker.trackEvent("Card Issuer Selected", parameters: ["id": issuer.id])
+        eventTracker.trackEvent(Constants.TrackingEvents.CardIssuers.selected, parameters: ["id": issuer.id])
         output.showInstallmentOptionsFor(paymentMethod: paymentMethod, cardIssuer: issuer, amount: amount)
     }
     
     func cancelPaymentFlow(userInitiated: Bool = true) {
         if userInitiated {
-            eventTracker.trackEvent("Card Issuer Selection cancelled", parameters: nil)
+            eventTracker.trackEvent(Constants.TrackingEvents.CardIssuers.cancelled, parameters: nil)
         }
         output.cancelCardIssuerSelection()
     }

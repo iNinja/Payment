@@ -25,7 +25,7 @@ final class InstallmentOptionNetworkRepository: InstallmentOptionRepository, Net
     override func getAll(_ callback: @escaping ([InstallmentOption]?, RepositoryError?) -> Void) {
         let parameters = [ "amount": amount, "payment_method_id": paymentMethodId,
                            "issuer_id": cardIssuerId ]
-        networkClient.get(path: "v1/payment_methods/installments", parameters: parameters) { (response, error) in
+        networkClient.get(path: Constants.API.Endpoints.installmentOptions, parameters: parameters) { (response, error) in
             guard let response = response else {
                 callback(nil, self.handleError(error))
                 return

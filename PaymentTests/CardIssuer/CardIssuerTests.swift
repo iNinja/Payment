@@ -105,7 +105,7 @@ class CardIssuerTests: XCTestCase {
         
         XCTAssertEqual(output.cancelCardIssuerSelectionCalls, 1)
         XCTAssertEqual(eventTracker.trackedEvents.count, 2) // first event is the retrieval of data
-        XCTAssertTrue(eventTracker.trackedEvent(named: "Card Issuer Selection cancelled"))
+        XCTAssertTrue(eventTracker.trackedEvent(named: "Card Issuer Selection Cancelled"))
     }
     
     func test_HandlesDataSelection() {

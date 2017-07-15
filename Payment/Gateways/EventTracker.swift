@@ -15,6 +15,6 @@ protocol EventTracker {
 
 extension EventTracker {
     func trackSectionChange(name: String) {
-        trackEvent("Entered Section", parameters: ["section": name])
+        trackEvent(Constants.TrackingEvents.enteredSection, parameters: ["section": name])
     }
 }

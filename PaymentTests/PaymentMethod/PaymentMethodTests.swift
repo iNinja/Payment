@@ -104,7 +104,7 @@ class PaymentMethodTests: XCTestCase {
         
         XCTAssertEqual(output.cancelPaymentProcessCalls, 1)
         XCTAssertEqual(eventTracker.trackedEvents.count, 2) // first event is the retrieval of data
-        XCTAssertTrue(eventTracker.trackedEvent(named: "Payment Method Selection cancelled"))
+        XCTAssertTrue(eventTracker.trackedEvent(named: "Payment Method Selection Cancelled"))
     }
     
     func test_HandlesDataSelection() {

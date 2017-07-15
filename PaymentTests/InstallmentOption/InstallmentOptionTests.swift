@@ -104,7 +104,7 @@ class InstallmentOptionTests: XCTestCase {
         
         XCTAssertEqual(output.cancelIntallmentOptionsSelectionCalls, 1)
         XCTAssertEqual(eventTracker.trackedEvents.count, 2) // first event is the retrieval of data
-        XCTAssertTrue(eventTracker.trackedEvent(named: "Installment Option Selection cancelled"))
+        XCTAssertTrue(eventTracker.trackedEvent(named: "Installment Option Selection Cancelled"))
     }
     
     func test_HandlesDataSelection() {

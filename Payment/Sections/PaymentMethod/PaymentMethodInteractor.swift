@@ -22,25 +22,25 @@ final class PaymentMethodInteractor {
     }
     
     func trackImpression() {
-        eventTracker.trackSectionChange(name: "Payment Method")
+        eventTracker.trackSectionChange(name: Constants.TrackingEvents.Sections.paymentMethod)
     }
     
     func getPaymentMethods(completion: @escaping ([PaymentMethod]?, RepositoryError?) -> Void) {
         repository.getAll { (paymentMethods, error) in
-            let eventSuffix = error == nil ? "Succeeded" : "Failed"
-            self.eventTracker.trackEvent("Payment Method Retrieval " + eventSuffix, parameters: nil)
+            let event = error == nil ? Constants.TrackingEvents.PaymentMethods.retrieved : Constants.TrackingEvents.PaymentMethods.notRetrieved
+            self.eventTracker.trackEvent(event, parameters: nil)
             completion(paymentMethods, error)
         }
     }
     
     func continuePaymentFlowWith(method: PaymentMethod) {
-        eventTracker.trackEvent("Payment Method Selected", parameters: ["id": method.id])
+        eventTracker.trackEvent(Constants.TrackingEvents.PaymentMethods.selected, parameters: ["id": method.id])
         output.showCardProvidersFor(paymentMethod: method, amount: amount)
     }
     
     func cancelPaymentFlow(userInitiated: Bool = true) {
         if userInitiated {
-            eventTracker.trackEvent("Payment Method Selection cancelled", parameters: nil)
+            eventTracker.trackEvent(Constants.TrackingEvents.PaymentMethods.cancelled, parameters: nil)
         }
         output.cancelPaymentProcess()
     }

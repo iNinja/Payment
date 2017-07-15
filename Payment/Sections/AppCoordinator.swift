@@ -12,7 +12,8 @@ final class AppCoordinator {
     private let window: UIWindow
     fileprivate let navigationController: UINavigationController
     fileprivate let eventTracker = ConsoleEventTracker()
-    fileprivate let networkClient = AlamofireNetworkClient(baseURL: "https://api.mercadopago.com", defaultParameters: ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88"])
+    fileprivate let networkClient = AlamofireNetworkClient(baseURL: Constants.API.url,
+                                                           defaultParameters: ["public_key": Constants.API.publicKey])
     
     init(window: UIWindow) {
         self.window = window

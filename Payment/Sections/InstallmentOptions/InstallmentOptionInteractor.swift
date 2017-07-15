@@ -22,21 +22,21 @@ final class InstallmentOptionInteractor {
     }
     
     func trackImpression() {
-        eventTracker.trackSectionChange(name: "Installment Option")
+        eventTracker.trackSectionChange(name: Constants.TrackingEvents.Sections.installmentOption)
     }
     
     func getInstallmentOptions(completion: @escaping ([InstallmentOption]?, RepositoryError?) -> Void) {
         repository.getAll { (installmentOptions, error) in
-            let eventSuffix = error == nil ? "Succeeded" : "Failed"
-            self.eventTracker.trackEvent("Installment Option Retrieval " + eventSuffix, parameters: nil)
+            let event = error == nil ? Constants.TrackingEvents.InstallmentOptions.retrieved : Constants.TrackingEvents.InstallmentOptions.notRetrieved
+            self.eventTracker.trackEvent(event, parameters: nil)
             completion(installmentOptions, error)
         }
     }
     
     func processPaymentWith(option: InstallmentOption, callback: @escaping (ProcessPaymentResult) -> Void) {
-        eventTracker.trackEvent("Installment Option Selected", parameters: ["installments": String(option.installments)])
+        eventTracker.trackEvent(Constants.TrackingEvents.InstallmentOptions.selected, parameters: ["installments": String(option.installments)])
         processPayment.process(withInstallmentOption: option) { (processPaymentResult) in
-            self.eventTracker.trackEvent("Payment Processed", parameters: ["success": processPaymentResult.success.description])
+            self.eventTracker.trackEvent(Constants.TrackingEvents.InstallmentOptions.paymentProcessed, parameters: ["success": processPaymentResult.success.description])
             callback(processPaymentResult)
         }
     }
@@ -47,7 +47,7 @@ final class InstallmentOptionInteractor {
     
     func cancelPaymentFlow(userInitiated: Bool = true) {
         if userInitiated {
-            eventTracker.trackEvent("Installment Option Selection cancelled", parameters: nil)
+            eventTracker.trackEvent(Constants.TrackingEvents.InstallmentOptions.cancelled, parameters: nil)
         }
         output.cancelInstallmentOptionSelection()
     }

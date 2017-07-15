@@ -22,16 +22,16 @@ final class MainInteractor {
     }
     
     func trackImpression() {
-        eventTracker.trackSectionChange(name: "Main")
+        eventTracker.trackSectionChange(name: Constants.TrackingEvents.Sections.main)
     }
     
     func showAbout() {
-        eventTracker.trackEvent("About Selected", parameters: nil)
+        eventTracker.trackEvent(Constants.TrackingEvents.Main.aboutSelected, parameters: nil)
         output?.showAbout()
     }
     
     func trackPaymentFailure(reason: String) {
-        eventTracker.trackEvent("Payment Failed", parameters: ["reason": reason])
+        eventTracker.trackEvent(Constants.TrackingEvents.Main.paymentFailed, parameters: ["reason": reason])
     }
     
     func startPaymentFlow(amount: Float) throws {
@@ -40,7 +40,7 @@ final class MainInteractor {
             throw MainError.InvalidAmount
         }
         
-        eventTracker.trackEvent("Pay Selected", parameters: ["amount": String(amount)])
+        eventTracker.trackEvent(Constants.TrackingEvents.Main.paySelected, parameters: ["amount": String(amount)])
         output?.showPaymentMethods(for: amount)
     }
 }
