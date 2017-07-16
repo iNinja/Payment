@@ -1,5 +1,5 @@
 //
-//  TitleAndThumbCellDelegate.swift
+//  TitleAndThumbTableDelegate.swift
 //  Payment
 //
 //  Created by Ignacio Inglese on 7/16/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleAndThumbCellDelegate: NSObject, UITableViewDelegate {
+class TitleAndThumbTableDelegate: NSObject, UITableViewDelegate {
     var presenter: TitleAndThumbTablePresenter
     
     init(presenter: TitleAndThumbTablePresenter) {

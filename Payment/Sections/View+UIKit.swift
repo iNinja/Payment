@@ -31,11 +31,4 @@ extension View where Self: UIViewController {
     func showError(message: String) {
         showAlert(title: "Error".localized, message: message, confirmTitle: "OK".localized, completion: nil)
     }
-    
-    func replaceBackButton() {
-        let backBarButtonItem = UIBarButtonItem(title: "Back".localized, style: .plain, target: nil, action: nil)
-        backBarButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.clear], for: .normal)
-        backBarButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.clear], for: .highlighted)
-        navigationItem.backBarButtonItem = backBarButtonItem
-    }
 }

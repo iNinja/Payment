@@ -1,5 +1,5 @@
 //
-//  TitleAndThumbCellDatasource.swift
+//  TitleAndThumbTableDatasource.swift
 //  Payment
 //
 //  Created by Ignacio Inglese on 7/16/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleAndThumbCellDatasource: NSObject, UITableViewDataSource {
+class TitleAndThumbTableDatasource: NSObject, UITableViewDataSource {
     var presenter: TitleAndThumbTablePresenter
     var cellIdentifier = "TitleAndThumbCell"
     
