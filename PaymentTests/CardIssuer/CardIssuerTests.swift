@@ -54,7 +54,7 @@ class CardIssuerTests: XCTestCase {
         XCTAssertEqual(presenter.title, "Select Provider")
         XCTAssertEqual(presenter.elementCount, 27)
         XCTAssertEqual(presenter.elementTitle(at: 0), "Tarjeta Shopping")
-        XCTAssertEqual(presenter.elementImageURL(at: 0).absoluteString, "https://www.mercadopago.com/org-img/MP3/API/logos/288.gif")
+        XCTAssertEqual(presenter.elementThumbURL(at: 0).absoluteString, "https://www.mercadopago.com/org-img/MP3/API/logos/288.gif")
     }
     
     func test_CallsCorrectEndpoint() {

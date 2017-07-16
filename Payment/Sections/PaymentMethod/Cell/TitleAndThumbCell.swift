@@ -1,5 +1,5 @@
 //
-//  PaymentMethodCell.swift
+//  TitleAndThumbCell.swift
 //  Payment
 //
 //  Created by Ignacio Inglese on 7/13/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PaymentMethodCell: UITableViewCell {
-    @IBOutlet var paymentMethodImageView: UIImageView!
-    @IBOutlet var paymentMethodLabel: UILabel!
+class TitleAndThumbCell: UITableViewCell {
+    @IBOutlet var thumbImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

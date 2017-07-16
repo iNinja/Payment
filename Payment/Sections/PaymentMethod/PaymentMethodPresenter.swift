@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PaymentMethodPresenter {
+final class PaymentMethodPresenter: TitleAndThumbTablePresenter {
     weak var view: PaymentMethodView!
     private let interactor: PaymentMethodInteractor
     private var paymentMethods: [PaymentMethod] = []
@@ -48,7 +48,7 @@ final class PaymentMethodPresenter {
         return paymentMethods[idx].name
     }
     
-    func elementImageURL(at idx: Int) -> URL {
+    func elementThumbURL(at idx: Int) -> URL {
         return paymentMethods[idx].thumbnailURL
     }
     

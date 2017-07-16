@@ -87,9 +87,12 @@
 		BC58ED7B1F17F00000BC3553 /* AboutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED7A1F17F00000BC3553 /* AboutTests.swift */; };
 		BC58ED7E1F17F08900BC3553 /* MockAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED7D1F17F08900BC3553 /* MockAboutView.swift */; };
 		BC58ED801F17F2AB00BC3553 /* Pods_PaymentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC58ED7F1F17F2AB00BC3553 /* Pods_PaymentTests.framework */; };
-		BC58ED841F17F46D00BC3553 /* PaymentMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED821F17F46D00BC3553 /* PaymentMethodCell.swift */; };
-		BC58ED851F17F46D00BC3553 /* PaymentMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58ED831F17F46D00BC3553 /* PaymentMethodCell.xib */; };
+		BC58ED841F17F46D00BC3553 /* TitleAndThumbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED821F17F46D00BC3553 /* TitleAndThumbCell.swift */; };
+		BC58ED851F17F46D00BC3553 /* TitleAndThumbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58ED831F17F46D00BC3553 /* TitleAndThumbCell.xib */; };
 		BC58ED911F1ACB1A00BC3553 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED901F1ACB1A00BC3553 /* Constants.swift */; };
+		BC58ED951F1C04B200BC3553 /* TitleAndThumbTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED941F1C04B200BC3553 /* TitleAndThumbTablePresenter.swift */; };
+		BC58ED971F1C04C800BC3553 /* TitleAndThumbCellDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED961F1C04C800BC3553 /* TitleAndThumbCellDatasource.swift */; };
+		BC58ED991F1C04D200BC3553 /* TitleAndThumbCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58ED981F1C04D200BC3553 /* TitleAndThumbCellDelegate.swift */; };
 		C7864640430C4DD09D602B4B /* Pods_PaymentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7679424906A37E8C6249772 /* Pods_PaymentTests.framework */; };
 		CF0D1A782AE052AC2C6932C2 /* Pods_Payment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B0A3172557F307DFE8EC46 /* Pods_Payment.framework */; };
 /* End PBXBuildFile section */
@@ -196,9 +199,12 @@
 		BC58ED7A1F17F00000BC3553 /* AboutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTests.swift; sourceTree = "<group>"; };
 		BC58ED7D1F17F08900BC3553 /* MockAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAboutView.swift; sourceTree = "<group>"; };
 		BC58ED7F1F17F2AB00BC3553 /* Pods_PaymentTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_PaymentTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_PaymentTests.framework"; sourceTree = "<group>"; };
-		BC58ED821F17F46D00BC3553 /* PaymentMethodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodCell.swift; sourceTree = "<group>"; };
-		BC58ED831F17F46D00BC3553 /* PaymentMethodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodCell.xib; sourceTree = "<group>"; };
+		BC58ED821F17F46D00BC3553 /* TitleAndThumbCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndThumbCell.swift; sourceTree = "<group>"; };
+		BC58ED831F17F46D00BC3553 /* TitleAndThumbCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleAndThumbCell.xib; sourceTree = "<group>"; };
 		BC58ED901F1ACB1A00BC3553 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BC58ED941F1C04B200BC3553 /* TitleAndThumbTablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndThumbTablePresenter.swift; sourceTree = "<group>"; };
+		BC58ED961F1C04C800BC3553 /* TitleAndThumbCellDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndThumbCellDatasource.swift; sourceTree = "<group>"; };
+		BC58ED981F1C04D200BC3553 /* TitleAndThumbCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndThumbCellDelegate.swift; sourceTree = "<group>"; };
 		E7679424906A37E8C6249772 /* Pods_PaymentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B0A3172557F307DFE8EC46 /* Pods_Payment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Payment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -549,8 +555,11 @@
 		BC58ED811F17F45300BC3553 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				BC58ED821F17F46D00BC3553 /* PaymentMethodCell.swift */,
-				BC58ED831F17F46D00BC3553 /* PaymentMethodCell.xib */,
+				BC58ED821F17F46D00BC3553 /* TitleAndThumbCell.swift */,
+				BC58ED831F17F46D00BC3553 /* TitleAndThumbCell.xib */,
+				BC58ED941F1C04B200BC3553 /* TitleAndThumbTablePresenter.swift */,
+				BC58ED961F1C04C800BC3553 /* TitleAndThumbCellDatasource.swift */,
+				BC58ED981F1C04D200BC3553 /* TitleAndThumbCellDelegate.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -660,7 +669,7 @@
 				BC58ED061F170AE900BC3553 /* CardIssuerController.xib in Resources */,
 				BC58ED161F1713F100BC3553 /* InstallmentOptionController.xib in Resources */,
 				BC58ECF61F16F79F00BC3553 /* PaymentMethodController.xib in Resources */,
-				BC58ED851F17F46D00BC3553 /* PaymentMethodCell.xib in Resources */,
+				BC58ED851F17F46D00BC3553 /* TitleAndThumbCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +813,7 @@
 				BC58ECF21F16F2FE00BC3553 /* AboutInteractor.swift in Sources */,
 				BC58ECF51F16F79F00BC3553 /* PaymentMethodController.swift in Sources */,
 				BC58ED241F1733C200BC3553 /* PaymentMethodNetworkRepository.swift in Sources */,
+				BC58ED991F1C04D200BC3553 /* TitleAndThumbCellDelegate.swift in Sources */,
 				BC58ECE21F16E6F000BC3553 /* StringExtensions.swift in Sources */,
 				BC58ED1E1F17149000BC3553 /* InstallmentOptionOutput.swift in Sources */,
 				BC58ECD11F16D88200BC3553 /* MainPresenter.swift in Sources */,
@@ -813,7 +823,8 @@
 				BC58ECD91F16E25200BC3553 /* MainOutput.swift in Sources */,
 				BC58ECF01F16F23E00BC3553 /* AboutPresenter.swift in Sources */,
 				BC58ED1C1F17148300BC3553 /* InstallmentOptionInteractor.swift in Sources */,
-				BC58ED841F17F46D00BC3553 /* PaymentMethodCell.swift in Sources */,
+				BC58ED951F1C04B200BC3553 /* TitleAndThumbTablePresenter.swift in Sources */,
+				BC58ED841F17F46D00BC3553 /* TitleAndThumbCell.swift in Sources */,
 				BC58ED3F1F173C8B00BC3553 /* Timeable.swift in Sources */,
 				BC58ECFA1F16F8AD00BC3553 /* PaymentMethodPresenter.swift in Sources */,
 				BC58ECC81F11E30D00BC3553 /* AlamofireNetworkClient.swift in Sources */,
@@ -824,6 +835,7 @@
 				BC58ECB91F11D7F800BC3553 /* InstallmentOption.swift in Sources */,
 				BC58ECEE1F16F22B00BC3553 /* AboutView.swift in Sources */,
 				BC58ECC31F11DFE000BC3553 /* NetworkRepository.swift in Sources */,
+				BC58ED971F1C04C800BC3553 /* TitleAndThumbCellDatasource.swift in Sources */,
 				BC58ECBB1F11DAA400BC3553 /* Repository.swift in Sources */,
 				BC58ED221F1733C200BC3553 /* CardIssuerNetworkRepository.swift in Sources */,
 				BC58ED911F1ACB1A00BC3553 /* Constants.swift in Sources */,

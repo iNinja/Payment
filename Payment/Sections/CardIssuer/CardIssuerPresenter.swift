@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class CardIssuerPresenter {
+final class CardIssuerPresenter: TitleAndThumbTablePresenter {
     weak var view: CardIssuerView!
     private let interactor: CardIssuerInteractor
     private var cardIssuers: [CardIssuer] = []
@@ -48,7 +48,7 @@ final class CardIssuerPresenter {
         return cardIssuers[idx].name
     }
     
-    func elementImageURL(at idx: Int) -> URL {
+    func elementThumbURL(at idx: Int) -> URL {
         return cardIssuers[idx].thumbnailURL
     }
     

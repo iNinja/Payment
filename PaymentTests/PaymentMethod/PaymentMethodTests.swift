@@ -54,7 +54,7 @@ class PaymentMethodTests: XCTestCase {
         XCTAssertEqual(presenter.title, "Select Payment Method")
         XCTAssertEqual(presenter.elementCount, 4)
         XCTAssertEqual(presenter.elementTitle(at: 0), "Visa")
-        XCTAssertEqual(presenter.elementImageURL(at: 0).absoluteString, "https://www.mercadopago.com/org-img/MP3/API/logos/visa.gif")
+        XCTAssertEqual(presenter.elementThumbURL(at: 0).absoluteString, "https://www.mercadopago.com/org-img/MP3/API/logos/visa.gif")
     }
     
     func test_CallsCorrectEndpoint() {
