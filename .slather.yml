@@ -1,0 +1,9 @@
+coverage_service: cobertura_xml
+workspace: Payment.xcworkspace
+xcodeproj: Payment.xcodeproj
+scheme: Payment
+source_directory: Payment
+output_directory: SlatherReports
+ignore:
+  - PaymentTests/*
+  - PaymentUITests/*
