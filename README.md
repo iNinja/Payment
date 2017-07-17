@@ -5,3 +5,4 @@
 
 Test application to showcase technical knowledge by using MercadoPago's API.
 
+Code coverage: 96%. Click [here](http://htmlpreview.github.io/?https://github.com/iNinja/Payment/blob/master/HTML-CoverageReport/index.html) to see it.
