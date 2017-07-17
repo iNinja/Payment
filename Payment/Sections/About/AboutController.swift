@@ -48,6 +48,7 @@ final class AboutController: UIViewController, AboutView {
     
     private func setupLabel() {
         label.font = UIFont.systemFont(ofSize: 20)
+        label.accessibilityIdentifier = "Content"
         label.text = presenter.content
         label.numberOfLines = 0
         view.addSubview(label)

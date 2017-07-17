@@ -15,6 +15,7 @@ final class CardIssuerPresenter: TitleAndThumbTablePresenter {
     
     var elementCount: Int { return cardIssuers.count }
     var title: String { return "Select Provider".localized }
+    var cancelTitle: String { return "Cancel".localized }
     
     init(interactor: CardIssuerInteractor) {
         self.interactor = interactor
@@ -23,12 +24,14 @@ final class CardIssuerPresenter: TitleAndThumbTablePresenter {
     func viewLoaded() {
         view.startLoading()
         interactor.getCardIssuers { (cardIssuers, error) in
+            self.view.stopLoading()
+            
             guard let cardIssuers = cardIssuers else {
-                self.handleError(error)
+                self.handleCardIssuerSelectionError(error)
                 return
             }
             
-            self.handleSuccess(cardIssuers)
+            self.handleCardIssuerSelectionSuccess(cardIssuers)
         }
     }
     
@@ -37,7 +40,7 @@ final class CardIssuerPresenter: TitleAndThumbTablePresenter {
     }
     
     func viewSelectedCancel() {
-        interactor.cancelPaymentFlow()
+        interactor.cancelCardIssuerSelection()
     }
     
     func viewSelectedElementAt(idx: Int) {
@@ -52,16 +55,14 @@ final class CardIssuerPresenter: TitleAndThumbTablePresenter {
         return cardIssuers[idx].thumbnailURL
     }
     
-    private func handleSuccess(_ data: [CardIssuer]) {
+    private func handleCardIssuerSelectionSuccess(_ data: [CardIssuer]) {
         cardIssuers = data
         view.reloadCardIssuers()
-        view.stopLoading()
     }
     
-    private func handleError(_ error: RepositoryError?) {
-        view.stopLoading()
+    private func handleCardIssuerSelectionError(_ error: RepositoryError?) {
         view.showError(message: "There was an error attempting to retrieve providers.\nPlease try again.".localized)
-        interactor.cancelPaymentFlow(userInitiated: false)
+        interactor.cancelCardIssuerSelection(userInitiated: false)
     }
 
 }

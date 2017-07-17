@@ -47,7 +47,11 @@ class TitleAndThumbTableController: UIViewController {
         tableView.delegate = tableDelegate
         tableDatasource.registerCell(forTableView: tableView)
         
-        replaceBackButton()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: tablePresenter.cancelTitle, style: .plain, target: self, action: #selector(cancelTapped))
+    }
+    
+    @objc func cancelTapped() {
+        tablePresenter.viewSelectedCancel()
     }
     
     func reloadTable() {

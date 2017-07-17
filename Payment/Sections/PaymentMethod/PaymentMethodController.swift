@@ -25,4 +25,5 @@ final class PaymentMethodController: TitleAndThumbTableController, PaymentMethod
     func reloadPaymentMethods() {
         reloadTable()
     }
+    
 }

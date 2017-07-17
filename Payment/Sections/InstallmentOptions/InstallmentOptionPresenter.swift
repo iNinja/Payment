@@ -15,6 +15,7 @@ final class InstallmentOptionPresenter {
     
     var elementCount: Int { return installmentOptions.count }
     var title: String { return "Select Installments".localized }
+    var cancelTitle: String { return "Cancel".localized }
     
     init(interactor: InstallmentOptionInteractor) {
         self.interactor = interactor
@@ -23,12 +24,13 @@ final class InstallmentOptionPresenter {
     func viewLoaded() {
         view.startLoading()
         interactor.getInstallmentOptions { (installmentOptions, error) in
+            self.view.stopLoading()
             guard let installmentOptions = installmentOptions else {
-                self.handleError(error)
+                self.handleInstallmentOptionSelectionError(error)
                 return
             }
             
-            self.handleSuccess(installmentOptions)
+            self.handleInstallmentOptionSelectionSuccess(installmentOptions)
         }
     }
     
@@ -37,7 +39,7 @@ final class InstallmentOptionPresenter {
     }
     
     func viewSelectedCancel() {
-        interactor.cancelPaymentFlow()
+        interactor.cancelInstallmentOptionSelection()
     }
     
     func viewSelectedElementAt(idx: Int) {
@@ -54,16 +56,14 @@ final class InstallmentOptionPresenter {
         return installmentOptions[idx].recommendedMessage
     }
     
-    private func handleSuccess(_ data: [InstallmentOption]) {
+    private func handleInstallmentOptionSelectionSuccess(_ data: [InstallmentOption]) {
         installmentOptions = data
         view.reloadInstallmentOptions()
-        view.stopLoading()
     }
     
-    private func handleError(_ error: RepositoryError?) {
-        view.stopLoading()
+    private func handleInstallmentOptionSelectionError(_ error: RepositoryError?) {
         view.showError(message: "There was an error attempting to retrieve installments.\nPlease try again.".localized)
-        interactor.cancelPaymentFlow(userInitiated: false)
+        interactor.cancelInstallmentOptionSelection(userInitiated: false)
     }
     
 }

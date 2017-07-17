@@ -39,6 +39,16 @@
                ReferencedContainer = "container:Payment.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC58EDAC1F1C163300BC3553"
+               BuildableName = "PaymentUITests.xctest"
+               BlueprintName = "PaymentUITests"
+               ReferencedContainer = "container:Payment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -39,8 +39,7 @@ extension NetworkRepository {
     }
     
     func parseURL(forKey key: String, in json: JSON) throws -> URL {
-        guard let string = json[key].string else { throw RepositoryError.ParsingFailed(failingKey: key) }
-        guard let url = URL(string: string) else { throw RepositoryError.ParsingFailed(failingKey: key) }
+        guard let string = json[key].string, let url = URL(string: string) else { throw RepositoryError.ParsingFailed(failingKey: key) }
         
         return url
     }

@@ -45,7 +45,7 @@ final class InstallmentOptionInteractor {
         output.completePaymentFlow()
     }
     
-    func cancelPaymentFlow(userInitiated: Bool = true) {
+    func cancelInstallmentOptionSelection(userInitiated: Bool = true) {
         if userInitiated {
             eventTracker.trackEvent(Constants.TrackingEvents.InstallmentOptions.cancelled, parameters: nil)
         }

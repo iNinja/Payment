@@ -15,6 +15,7 @@ final class PaymentMethodPresenter: TitleAndThumbTablePresenter {
     
     var elementCount: Int { return paymentMethods.count }
     var title: String { return "Select Payment Method".localized }
+    var cancelTitle: String { return "Cancel".localized }
     
     init(interactor: PaymentMethodInteractor) {
         self.interactor = interactor
@@ -23,12 +24,13 @@ final class PaymentMethodPresenter: TitleAndThumbTablePresenter {
     func viewLoaded() {
         view.startLoading()
         interactor.getPaymentMethods { (paymentMethods, error) in
+            self.view.stopLoading()
             guard let paymentMethods = paymentMethods else {
-                self.handleError(error)
+                self.handlePaymentMethodSelectionError(error)
                 return
             }
             
-            self.handleSuccess(paymentMethods)
+            self.handlePaymentMethodSelectionSuccess(paymentMethods)
         }
     }
     
@@ -37,7 +39,7 @@ final class PaymentMethodPresenter: TitleAndThumbTablePresenter {
     }
     
     func viewSelectedCancel() {
-        interactor.cancelPaymentFlow()
+        interactor.cancelPaymentMethodSelection()
     }
     
     func viewSelectedElementAt(idx: Int) {
@@ -52,15 +54,13 @@ final class PaymentMethodPresenter: TitleAndThumbTablePresenter {
         return paymentMethods[idx].thumbnailURL
     }
     
-    private func handleSuccess(_ data: [PaymentMethod]) {
+    private func handlePaymentMethodSelectionSuccess(_ data: [PaymentMethod]) {
         paymentMethods = data
         view.reloadPaymentMethods()
-        view.stopLoading()
     }
     
-    private func handleError(_ error: RepositoryError?) {
-        view.stopLoading()
+    private func handlePaymentMethodSelectionError(_ error: RepositoryError?) {
         view.showError(message: "There was an error attempting to retrieve payment methods.\nPlease try again.".localized)
-        interactor.cancelPaymentFlow(userInitiated: false)
+        interactor.cancelPaymentMethodSelection(userInitiated: false)
     }
 }

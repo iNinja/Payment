@@ -38,7 +38,7 @@ final class PaymentMethodInteractor {
         output.showCardProvidersFor(paymentMethod: method, amount: amount)
     }
     
-    func cancelPaymentFlow(userInitiated: Bool = true) {
+    func cancelPaymentMethodSelection(userInitiated: Bool = true) {
         if userInitiated {
             eventTracker.trackEvent(Constants.TrackingEvents.PaymentMethods.cancelled, parameters: nil)
         }

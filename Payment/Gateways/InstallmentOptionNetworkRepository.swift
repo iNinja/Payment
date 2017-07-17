@@ -23,6 +23,8 @@ final class InstallmentOptionNetworkRepository: InstallmentOptionRepository, Net
     }
     
     override func getAll(_ callback: @escaping ([InstallmentOption]?, RepositoryError?) -> Void) {
+        super.getAll { (cardIssuer, error) in }
+        
         let parameters = [ "amount": amount, "payment_method_id": paymentMethodId,
                            "issuer_id": cardIssuerId ]
         networkClient.get(path: Constants.API.Endpoints.installmentOptions, parameters: parameters) { (response, error) in

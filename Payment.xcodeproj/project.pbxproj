@@ -95,6 +95,11 @@
 		BC58EDA61F1C105300BC3553 /* TitleAndThumbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC58EDA11F1C105300BC3553 /* TitleAndThumbCell.xib */; };
 		BC58EDA71F1C105300BC3553 /* TitleAndThumbTableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDA21F1C105300BC3553 /* TitleAndThumbTableDatasource.swift */; };
 		BC58EDA81F1C105300BC3553 /* TitleAndThumbTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDA31F1C105300BC3553 /* TitleAndThumbTableDelegate.swift */; };
+		BC58EDB01F1C163300BC3553 /* MainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDAF1F1C163300BC3553 /* MainUITests.swift */; };
+		BC58EDB81F1C2BA500BC3553 /* AboutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDB71F1C2BA500BC3553 /* AboutUITests.swift */; };
+		BC58EDBA1F1C2BB700BC3553 /* PaymentMethodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDB91F1C2BB700BC3553 /* PaymentMethodUITests.swift */; };
+		BC58EDBC1F1C2BC100BC3553 /* CardIssuerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDBB1F1C2BC100BC3553 /* CardIssuerUITests.swift */; };
+		BC58EDBE1F1C2BD100BC3553 /* InstallmentOptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58EDBD1F1C2BD100BC3553 /* InstallmentOptionUITests.swift */; };
 		C7864640430C4DD09D602B4B /* Pods_PaymentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7679424906A37E8C6249772 /* Pods_PaymentTests.framework */; };
 		CF0D1A782AE052AC2C6932C2 /* Pods_Payment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B0A3172557F307DFE8EC46 /* Pods_Payment.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +111,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = BC00E6391F11C15F0050C233;
 			remoteInfo = "payment test";
+		};
+		BC58EDB21F1C163300BC3553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC00E6321F11C15F0050C233 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC00E6391F11C15F0050C233;
+			remoteInfo = Payment;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -209,6 +221,13 @@
 		BC58EDA11F1C105300BC3553 /* TitleAndThumbCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleAndThumbCell.xib; sourceTree = "<group>"; };
 		BC58EDA21F1C105300BC3553 /* TitleAndThumbTableDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndThumbTableDatasource.swift; sourceTree = "<group>"; };
 		BC58EDA31F1C105300BC3553 /* TitleAndThumbTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleAndThumbTableDelegate.swift; sourceTree = "<group>"; };
+		BC58EDAD1F1C163300BC3553 /* PaymentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaymentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC58EDAF1F1C163300BC3553 /* MainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITests.swift; sourceTree = "<group>"; };
+		BC58EDB11F1C163300BC3553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC58EDB71F1C2BA500BC3553 /* AboutUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUITests.swift; sourceTree = "<group>"; };
+		BC58EDB91F1C2BB700BC3553 /* PaymentMethodUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodUITests.swift; sourceTree = "<group>"; };
+		BC58EDBB1F1C2BC100BC3553 /* CardIssuerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardIssuerUITests.swift; sourceTree = "<group>"; };
+		BC58EDBD1F1C2BD100BC3553 /* InstallmentOptionUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallmentOptionUITests.swift; sourceTree = "<group>"; };
 		E7679424906A37E8C6249772 /* Pods_PaymentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6B0A3172557F307DFE8EC46 /* Pods_Payment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Payment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -228,6 +247,13 @@
 			files = (
 				BC58ED801F17F2AB00BC3553 /* Pods_PaymentTests.framework in Frameworks */,
 				C7864640430C4DD09D602B4B /* Pods_PaymentTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC58EDAA1F1C163300BC3553 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +278,7 @@
 			children = (
 				BC00E63C1F11C15F0050C233 /* Payment */,
 				BC58ED2A1F17370A00BC3553 /* PaymentTests */,
+				BC58EDAE1F1C163300BC3553 /* PaymentUITests */,
 				BC00E63B1F11C15F0050C233 /* Products */,
 				B20EAA999E6B2884CE780C19 /* Pods */,
 				DA1545659450D950AC76F3F3 /* Frameworks */,
@@ -263,6 +290,7 @@
 			children = (
 				BC00E63A1F11C15F0050C233 /* Payment.app */,
 				BC58ED291F17370A00BC3553 /* PaymentTests.xctest */,
+				BC58EDAD1F1C163300BC3553 /* PaymentUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -570,6 +598,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		BC58EDAE1F1C163300BC3553 /* PaymentUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC58EDAF1F1C163300BC3553 /* MainUITests.swift */,
+				BC58EDB71F1C2BA500BC3553 /* AboutUITests.swift */,
+				BC58EDB91F1C2BB700BC3553 /* PaymentMethodUITests.swift */,
+				BC58EDBB1F1C2BC100BC3553 /* CardIssuerUITests.swift */,
+				BC58EDBD1F1C2BD100BC3553 /* InstallmentOptionUITests.swift */,
+				BC58EDB11F1C163300BC3553 /* Info.plist */,
+			);
+			path = PaymentUITests;
+			sourceTree = "<group>";
+		};
 		DA1545659450D950AC76F3F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +666,24 @@
 			productReference = BC58ED291F17370A00BC3553 /* PaymentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BC58EDAC1F1C163300BC3553 /* PaymentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC58EDB41F1C163300BC3553 /* Build configuration list for PBXNativeTarget "PaymentUITests" */;
+			buildPhases = (
+				BC58EDA91F1C163300BC3553 /* Sources */,
+				BC58EDAA1F1C163300BC3553 /* Frameworks */,
+				BC58EDAB1F1C163300BC3553 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC58EDB31F1C163300BC3553 /* PBXTargetDependency */,
+			);
+			name = PaymentUITests;
+			productName = PaymentUITests;
+			productReference = BC58EDAD1F1C163300BC3553 /* PaymentUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -640,6 +699,11 @@
 						ProvisioningStyle = Automatic;
 					};
 					BC58ED281F17370A00BC3553 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC00E6391F11C15F0050C233;
+					};
+					BC58EDAC1F1C163300BC3553 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BC00E6391F11C15F0050C233;
@@ -661,6 +725,7 @@
 			targets = (
 				BC00E6391F11C15F0050C233 /* Payment */,
 				BC58ED281F17370A00BC3553 /* PaymentTests */,
+				BC58EDAC1F1C163300BC3553 /* PaymentUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -692,6 +757,13 @@
 				BC58ED531F17505300BC3553 /* InstallmentOptions_Valid.json in Resources */,
 				BC58ED661F17601600BC3553 /* CardIssuers_Valid.json in Resources */,
 				BC58ED561F17555A00BC3553 /* PaymentMethods_Invalid.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC58EDAB1F1C163300BC3553 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,6 +949,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC58EDA91F1C163300BC3553 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC58EDBC1F1C2BC100BC3553 /* CardIssuerUITests.swift in Sources */,
+				BC58EDBE1F1C2BD100BC3553 /* InstallmentOptionUITests.swift in Sources */,
+				BC58EDB01F1C163300BC3553 /* MainUITests.swift in Sources */,
+				BC58EDB81F1C2BA500BC3553 /* AboutUITests.swift in Sources */,
+				BC58EDBA1F1C2BB700BC3553 /* PaymentMethodUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -884,6 +968,11 @@
 			isa = PBXTargetDependency;
 			target = BC00E6391F11C15F0050C233 /* Payment */;
 			targetProxy = BC58ED2E1F17370A00BC3553 /* PBXContainerItemProxy */;
+		};
+		BC58EDB31F1C163300BC3553 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC00E6391F11C15F0050C233 /* Payment */;
+			targetProxy = BC58EDB21F1C163300BC3553 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1045,6 +1134,30 @@
 			};
 			name = Release;
 		};
+		BC58EDB51F1C163300BC3553 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PaymentUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioinglese.PaymentUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Payment;
+			};
+			name = Debug;
+		};
+		BC58EDB61F1C163300BC3553 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PaymentUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ignacioinglese.PaymentUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Payment;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1074,6 +1187,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BC58EDB41F1C163300BC3553 /* Build configuration list for PBXNativeTarget "PaymentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC58EDB51F1C163300BC3553 /* Debug */,
+				BC58EDB61F1C163300BC3553 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

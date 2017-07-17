@@ -45,7 +45,11 @@ class InstallmentOptionController: UIViewController, InstallmentOptionView {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
-        replaceBackButton()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: presenter.cancelTitle, style: .plain, target: self, action: #selector(cancelTapped))
+    }
+    
+    @objc func cancelTapped() {
+        presenter.viewSelectedCancel()
     }
 }
 

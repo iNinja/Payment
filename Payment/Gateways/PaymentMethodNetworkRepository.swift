@@ -18,6 +18,8 @@ final class PaymentMethodNetworkRepository: PaymentMethodRepository, NetworkRepo
     }
     
     override func getAll(_ callback: @escaping ([PaymentMethod]?, RepositoryError?) -> Void) {
+        super.getAll { (cardIssuer, error) in }
+        
         networkClient.get(path: Constants.API.Endpoints.paymentMethods, parameters: nil) { (response, error) in
             guard let response = response else {
                 callback(nil, self.handleError(error))
